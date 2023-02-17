@@ -7,6 +7,7 @@ public class Page {
     protected WebDriver driver;
 
     public Page() {
+        System.setProperty("webdriver.edge.driver", "C:\\Users\\ilamu\\Downloads\\edgedriver_win64\\msedgedriver.exe");
         driver = new EdgeDriver();
     }
 

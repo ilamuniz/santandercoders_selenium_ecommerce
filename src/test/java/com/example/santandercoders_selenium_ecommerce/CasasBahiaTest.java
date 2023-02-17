@@ -17,7 +17,7 @@ public class CasasBahiaTest {
     public CasasBahia casasBahia;
     @BeforeEach
     public void acessarPaginaInicial() {
-        System.setProperty("edgedriver.edge.driver", "C:\\Users\\ilamu\\Downloads\\edgedriver_win64\\msedgedriver.exe");
+
         casasBahia = new CasasBahia();
     }
 
