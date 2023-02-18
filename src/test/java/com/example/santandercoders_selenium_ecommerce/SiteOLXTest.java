@@ -4,13 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/**
- * TODO: tipos de testes a fazer
- * 1. buscar produto
- * 2. ao clicar no botão "entrar", direcionar para página de login
- * 3. verificar se o campo "senha" está vazio
- */
-
 public class SiteOLXTest {
 
     public SiteOLX siteOLX;
