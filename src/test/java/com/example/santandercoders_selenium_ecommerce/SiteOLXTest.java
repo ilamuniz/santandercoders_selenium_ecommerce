@@ -3,29 +3,30 @@ package com.example.santandercoders_selenium_ecommerce;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebElement;
 
 /**
  * TODO: tipos de testes a fazer
  * 1. buscar produto
- * 2. retornar informações do produto
- * 3. adicionar produto ao carrinho
+ * 2. ao clicar no botão "entrar", direcionar para página de login
+ * 3. verificar se o campo "senha" está vazio
  */
 
-public class CasasBahiaTest {
+public class SiteOLXTest {
 
-    public CasasBahia casasBahia;
+    public SiteOLX siteOLX;
     @BeforeEach
     public void acessarPaginaInicial() {
 
-        casasBahia = new CasasBahia();
+        siteOLX = new SiteOLX();
     }
 
+    //teste 1: buscar produto
     @Test
     public void testBuscarProduto_quandoBuscarProduto_entaoExibirProdutoBuscado() {
-        String esperado = "ventilador";
-        casasBahia.pesquisarProduto(esperado);
-        String titulo = casasBahia.getTituloDosProdutos();
+        String esperado = "\"ventilador\" no Brasil";
+        String pesquisa = "ventilador";
+        siteOLX.pesquisarProduto(pesquisa);
+        String titulo = siteOLX.getTituloDosProdutos();
         String resultado = titulo;
         Assertions.assertEquals(esperado, resultado);
     }

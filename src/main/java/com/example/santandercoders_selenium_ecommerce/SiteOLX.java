@@ -1,13 +1,14 @@
 package com.example.santandercoders_selenium_ecommerce;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-public class CasasBahia extends Page {
+public class SiteOLX extends Page {
 
-    public CasasBahia() {
+    public SiteOLX() {
         super();
-        driver.get("https://www.casasbahia.com.br/");
+        driver.get("https://www.olx.com.br/");
     }
 
     @Override
@@ -16,17 +17,17 @@ public class CasasBahia extends Page {
     }
 
     public WebElement getBuscaInput() {
-        return driver.findElement(By.id("strBusca"));
+        return driver.findElement(By.id("searchtext-input"));
     }
 
     public void pesquisarProduto(String nomeProduto) {
         WebElement busca = getBuscaInput();
         busca.clear();
         busca.sendKeys(nomeProduto);
-        busca.submit();
+        busca.sendKeys(Keys.ENTER);
     }
 
     public String getTituloDosProdutos() {
-        return driver.findElement(By.id("//*[@id=\"__next\"]/div[2]/div/div/div[2]/ul/li/div/h1")).getText();
+        return driver.findElement(By.xpath("//*[@id=\"column-main-content\"]/div[3]/div/div/div/div/h1")).getText();
     }
 }
