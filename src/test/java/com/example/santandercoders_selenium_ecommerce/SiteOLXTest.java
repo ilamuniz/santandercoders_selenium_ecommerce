@@ -16,11 +16,17 @@ public class SiteOLXTest {
     public SiteOLX siteOLX;
     @BeforeEach
     public void acessarPaginaInicial() {
-
         siteOLX = new SiteOLX();
     }
 
-    //teste 1: buscar produto
+    //Teste 1: verififcar se o campo "busca" está vazio
+    @Test
+    public void testCampoSenha_quandoEntrarNaPaginaDeLogin_entaoCampoDaSenhaDeveEstarVazio() {
+        boolean resultado = siteOLX.verificarCampoDeBusca();
+        Assertions.assertTrue(resultado);
+    }
+
+    //Teste 2: buscar produto
     @Test
     public void testBuscarProduto_quandoBuscarProduto_entaoExibirProdutoBuscado() {
         String esperado = "\"ventilador\" no Brasil";
@@ -31,4 +37,13 @@ public class SiteOLXTest {
         Assertions.assertEquals(esperado, resultado);
     }
 
+    //Teste 3: direcionar para página de login ao clicar no botão "entrar"
+    @Test
+    public void testLogar_quandoClicarNoBotaoEntrar_entaoRedirecionarParaPaginaDeLogin() {
+        String esperado = "Acesse a sua conta";
+        siteOLX.logar();
+        String titulo = siteOLX.getTituloDaPagina();
+        String resultado = titulo;
+        Assertions.assertEquals(esperado, resultado);
+    }
 }
